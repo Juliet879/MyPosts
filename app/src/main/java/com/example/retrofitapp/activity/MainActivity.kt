@@ -2,6 +2,7 @@ package com.example.retrofitapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
              }
 
              override fun onFailure(call: Call<List<PostItem>?>, t: Throwable) {
-                 TODO("Not yet implemented")
+                 Log.d("MainActivity","OnFailure" + t.message)
              }
          })
     }
