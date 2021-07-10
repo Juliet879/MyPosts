@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PostRecyclerViewAdapter(var postList: ArrayList<PostItem>) :
+class PostRecyclerViewAdapter(var postList: MutableList<Posts>) :
     RecyclerView.Adapter<PostItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostItemViewHolder {
         val itemView =

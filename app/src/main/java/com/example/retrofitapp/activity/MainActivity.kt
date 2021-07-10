@@ -22,16 +22,16 @@ class MainActivity : AppCompatActivity() {
 
         var retrofit = ApiClient.buildApiClient(ApiInterface::class.java)
         val  request = retrofit.getPosts()
-         request.enqueue(object : Callback<List<PostItem>?> {
-             override fun onResponse(call: Call<List<PostItem>?>, response: Response<List<PostItem>?>) {
+         request.enqueue(object : Callback<List<Posts>?> {
+             override fun onResponse(call: Call<List<Posts>?>, response: Response<List<Posts>?>) {
                  val posts = response.body()!!
 
-                 var postAdapter = PostRecyclerViewAdapter(posts as ArrayList<PostItem>)
+                 val postAdapter = PostRecyclerViewAdapter(posts as ArrayList<Posts>)
                  rvPosts.adapter = postAdapter
                  rvPosts.layoutManager = LinearLayoutManager(baseContext)
              }
 
-             override fun onFailure(call: Call<List<PostItem>?>, t: Throwable) {
+             override fun onFailure(call: Call<List<Posts>?>, t: Throwable) {
                  Log.d("MainActivity","OnFailure" + t.message)
              }
          })
