@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class PostRecyclerViewAdapter(var postList: MutableList<Posts>) :
     RecyclerView.Adapter<PostItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostItemViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.post_item_list, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.post_item_list, parent, false)
         return PostItemViewHolder(itemView)
     }
 

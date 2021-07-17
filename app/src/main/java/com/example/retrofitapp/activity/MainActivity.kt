@@ -24,13 +24,12 @@ class MainActivity : AppCompatActivity() {
         val  request = retrofit.getPosts()
          request.enqueue(object : Callback<List<Posts>?> {
              override fun onResponse(call: Call<List<Posts>?>, response: Response<List<Posts>?>) {
-                 val posts = response.body()!!
+                 val posts = response.body()
 
-                 val postAdapter = PostRecyclerViewAdapter(posts as ArrayList<Posts>)
+                 val postAdapter = PostRecyclerViewAdapter(posts!! as ArrayList<Posts>)
                  rvPosts.adapter = postAdapter
                  rvPosts.layoutManager = LinearLayoutManager(baseContext)
              }
-
              override fun onFailure(call: Call<List<Posts>?>, t: Throwable) {
                  Log.d("MainActivity","OnFailure" + t.message)
              }
