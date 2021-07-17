@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
              override fun onResponse(call: Call<List<Posts>?>, response: Response<List<Posts>?>) {
                  val posts = response.body()
 
-                 val postAdapter = PostRecyclerViewAdapter(posts!! as ArrayList<Posts>)
+                 val postAdapter = PostRecyclerViewAdapter(posts!! as ArrayList<Posts>,baseContext)
                  rvPosts.adapter = postAdapter
                  rvPosts.layoutManager = LinearLayoutManager(baseContext)
              }
